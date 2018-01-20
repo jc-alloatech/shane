@@ -30,22 +30,19 @@ import java.util.Random;
 public class Dice {
 
     private int face;
-    private MutableObject mutableObj;
+    private Random generator;
 
     public Dice() {
         face = 0;
-        mutableObj = new MutableObject();
+        generator = new Random();
     }
 
     public Dice(Dice d1) {
-        //WHAT HAPPENS IF THIS IS CLASS THAT HAS AN OBJECT LIKE ABOVE mutableObj? 
         face = d1.face;
-        mutableObj = d1.mutableObj;
+        generator = new Random();
     }
 
     public void roll() {
-        //WHAT ARE THE IMPLICATIONS OF THIS BEING INITIALIZE HERE ?
-        Random generator = new Random();
         face = generator.nextInt(6) + 1;
     }
 
@@ -54,21 +51,7 @@ public class Dice {
     }
 
     public String toString() {
-        //DO YOU UNDERSTAND WHAT THIS IS REALLY DOING?
-        //NEED TO TALK ABOUT STRINGS, IMMUTABILITY, BUILDING, ETC.... 
         return "The face value is: " + face;
     }
-
-    public String objToString() {
-        return super.toString();
-    }
-    
-    public MutableObject getMutableObj() {
-        return mutableObj;
-    }
-
-    
-    public void setMutableObj(MutableObject mutable) {
-        this.mutableObj = mutable;
-    }
+   
 }

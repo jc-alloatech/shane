@@ -2,24 +2,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-/**
- * Proprietary and Confidential
- *           AlloaTech, LLC.
- *   
- * 	This document contains material which is proprietary and confidential 
- *  property of ThorCode.
- *   
- *  The right to view, reproduce, modify, distribute, or in any way display
- *  this work is prohibited without the expressed written consent of 
- *  ThorCode
- *
- *  Copyright &copy; 2018
- *  Initial commit:  Jan 19, 201811:16:03 AM
- *  User:  thor 
- */
-/**
- * @author thor
- */
 public class TestHelper {
     
     

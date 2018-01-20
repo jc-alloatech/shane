@@ -38,31 +38,6 @@ public class DiceTest {
     }
 
     @Test
-    public void testDiceHasCopyConst() {
-        assertTrue(TestHelper.hasCopyConst(test.getClass()));
-        Dice copiedDie = new Dice(test);
-        assertEquals(0, test.getFace());
-        int sentinel = 0;
-        while (copiedDie.getFace() == test.getFace()) {
-            if (sentinel == 20) {
-                break;
-            }
-            copiedDie.roll();
-        }
-        MutableObject mutObj = test.getMutableObj();
-        assertEquals(mutObj, test.getMutableObj());
-        assertEquals(0, test.getMutableObj().getMutable());
-        assertEquals(0, copiedDie.getMutableObj().getMutable());
-        assertEquals(mutObj, copiedDie.getMutableObj());
-        test.getMutableObj().setMutable(3);
-        ;
-        assertEquals(3, test.getMutableObj().getMutable());
-        // FOR SHANE TO FIGURE OUT
-        assertEquals(0, copiedDie.getMutableObj().getMutable());
-        assertNotEquals(test.getFace(), copiedDie.getFace());
-    }
-
-    @Test
     public void testDiceHasFaceMemberVar() {
         assertTrue(TestHelper.hasDeclaredField(test.getClass(), "face", "int"));
     }
@@ -113,13 +88,4 @@ public class DiceTest {
         assertTrue(test.getFace() != 0);
     }
 
-    @Test
-    public void testToString() {
-        test.roll();
-        String objToString = test.objToString();
-        String testToString = test.toString();
-        System.out.println("Obj toString()=" + objToString);
-        System.out.println("Dice toString()=" + testToString);
-        assertNotEquals(objToString, testToString);
-    }
 }
