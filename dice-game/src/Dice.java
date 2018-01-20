@@ -29,46 +29,45 @@ import java.util.Random;
 
 public class Dice {
 
-    private int face;
-    private MutableObject mutableObj;
+	private int face;
+	private MutableObject mutableObj;
 
-    public Dice() {
-        face = 0;
-        mutableObj = new MutableObject();
-    }
+	public Dice() {
+		face = 0;
+		mutableObj = new MutableObject();
+	}
 
-    public Dice(Dice d1) {
-        //WHAT HAPPENS IF THIS IS CLASS THAT HAS AN OBJECT LIKE ABOVE mutableObj? 
-        face = d1.face;
-        mutableObj = d1.mutableObj;
-    }
+	public Dice(Dice d1) {
+		// WHAT HAPPENS IF THIS IS CLASS THAT HAS AN OBJECT LIKE ABOVE mutableObj?
+		face = d1.face;
+		mutableObj = d1.mutableObj;
+	}
 
-    public void roll() {
-        //WHAT ARE THE IMPLICATIONS OF THIS BEING INITIALIZE HERE ?
-        Random generator = new Random();
-        face = generator.nextInt(6) + 1;
-    }
+	public void roll() {
+		// WHAT ARE THE IMPLICATIONS OF THIS BEING INITIALIZE HERE ?
+		Random generator = new Random();
+		face = generator.nextInt(6) + 1;
+	}
 
-    public int getFace() {
-        return face;
-    }
+	public int getFace() {
+		return face;
+	}
 
-    public String toString() {
-        //DO YOU UNDERSTAND WHAT THIS IS REALLY DOING?
-        //NEED TO TALK ABOUT STRINGS, IMMUTABILITY, BUILDING, ETC.... 
-        return "The face value is: " + face;
-    }
+	public String toString() {
+		// DO YOU UNDERSTAND WHAT THIS IS REALLY DOING?
+		// NEED TO TALK ABOUT STRINGS, IMMUTABILITY, BUILDING, ETC....
+		return "The face value is: " + face;
+	}
 
-    public String objToString() {
-        return super.toString();
-    }
-    
-    public MutableObject getMutableObj() {
-        return mutableObj;
-    }
+	public String objToString() {
+		return super.toString();
+	}
 
-    
-    public void setMutableObj(MutableObject mutable) {
-        this.mutableObj = mutable;
-    }
+	public MutableObject getMutableObj() {
+		return mutableObj;
+	}
+
+	public void setMutableObj(MutableObject mutable) {
+		this.mutableObj = mutable;
+	}
 }
